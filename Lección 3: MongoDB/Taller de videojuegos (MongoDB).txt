@@ -1,0 +1,27 @@
+// creando la base de datos
+use tienda_videojuegos;
+// consultando que se haya creado la base de datos
+show databases;
+// creando la coleccion videojuegos
+db.createCollection("videojuegos");
+// consultando que se haya creado la colección correctamente
+db.getCollectionNames();
+// Insertando 3 registros o filas
+db.videojuegos.insertMany([
+    {_id:1,nombre:'God of War'}, 
+    {_id:2, nombre:'Fifa 19'},
+    {_id:3,nombre:'Call of Duty'}
+])
+// consultando que se hayan insertado correctamente
+db.videojuegos.find();
+// actualizando datos
+db.videojuegos.update(
+    {nombre: 'God of War'},
+    {'nombre':'Halo'}
+);
+// consultado que se hayan actualizado los datos correctamente
+db.videojuegos.find();
+
+
+
+
